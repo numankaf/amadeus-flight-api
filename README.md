@@ -24,6 +24,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#swagger-docs">Swagger Docs</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -109,6 +110,11 @@ For backend:
 <img src="getFlights.png" alt="getFlights">
 <img src="searchFlights.png" alt="searchFlights">
 <img src="crud.png" alt="crud">
+
+## Swagger Docs
+Navigate to http://localhost:8080/swagger-ui/index.html to see the Swagger docs.
+
+<img src="swagger.png" alt="crud">
 
 ## License
 
