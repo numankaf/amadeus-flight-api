@@ -15,11 +15,11 @@ public class Airport extends BaseEntity{
     @Column(name = "CITY")
     private String city;
 
-    @OneToMany(mappedBy = "departureAirport", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "departureAirport", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Flight> departureFlights;
 
-    @OneToMany(mappedBy = "arrivalAirport",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "arrivalAirport",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Flight> arrivalFlights;
 

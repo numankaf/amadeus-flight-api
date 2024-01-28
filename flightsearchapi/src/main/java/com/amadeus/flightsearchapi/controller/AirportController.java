@@ -52,5 +52,10 @@ public class AirportController {
         return ResponseEntity.ok(airportService.getAll(pageable));
     }
 
+    @PostMapping("/search")
+    public ResponseEntity<Page<Airport>> search(@RequestBody AirportCrudDto dto,Pageable pageable){
+        return ResponseEntity.ok(airportService.search(dto,pageable));
+    }
+
 
 }

@@ -1,6 +1,8 @@
 package com.amadeus.flightsearchapi.controller;
 
 import com.amadeus.flightsearchapi.dto.flight.FlightCrudDto;
+import com.amadeus.flightsearchapi.dto.flight.FlightSearchDto;
+import com.amadeus.flightsearchapi.dto.flight.SearchResultDto;
 import com.amadeus.flightsearchapi.entity.Flight;
 import com.amadeus.flightsearchapi.exception.HttpResponse;
 import com.amadeus.flightsearchapi.exception.util.HttpResponseUtil;
@@ -51,5 +53,10 @@ public class FlightController {
     @GetMapping()
     public ResponseEntity<Page<Flight>> getAll(Pageable pageable){
         return ResponseEntity.ok(flightService.getAll(pageable));
+    }
+
+    @PostMapping("/search")
+    public ResponseEntity<List<SearchResultDto>> search(@RequestBody FlightSearchDto dto){
+        return ResponseEntity.ok(flightService.search(dto));
     }
 }
