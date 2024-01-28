@@ -1,0 +1,28 @@
+application:
+  title: Flight Api - Amadeus Travel to Future Program
+  version: 1.0.0
+  jwt_secret: WliZ7z2FHbLbu8IA
+  jwt_expires_in: 3600000 #1 hour
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flightapi
+    username: admin
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+  application:
+    name: flight-api
+
+server:
+  port: 8080

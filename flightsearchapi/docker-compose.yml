@@ -1,0 +1,33 @@
+version: "3"
+services:
+  postgredb:
+    container_name: postgredb_amadeus
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - 5432:5432
+    networks:
+      - amadeus_network
+
+  pgadmin:
+    container_name: pgadmin_amadeus
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - 5050:80
+    depends_on:
+      - postgredb
+    networks:
+      - amadeus_network
+
+
+
+networks:
+  amadeus_network:
+    driver: bridge
