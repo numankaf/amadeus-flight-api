@@ -4,6 +4,9 @@ application:
   jwt_secret: WliZ7z2FHbLbu8IA
   jwt_expires_in: 3600000 #1 hour
 
+mock-api:
+  url: http://localhost:8080/mock-api
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/flightapi
